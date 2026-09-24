@@ -75,7 +75,8 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          # Automatically provided by GitHub Actions; no repository secret required.
+          password: ${{ github.token }}
 
       - name: Set image name
         id: image
